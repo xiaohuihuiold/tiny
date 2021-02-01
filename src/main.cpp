@@ -2,7 +2,7 @@
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 
-#include "tiny_image.h"
+#include "render/tiny_image.h"
 
 const int WIDTH = 800;
 const int HEIGHT = 480;

@@ -1,5 +1,5 @@
-#ifndef __TINY_IMAGE_H
-#define __TINY_IMAGE_H
+#ifndef __RENDER_TINY_IMAGE_H
+#define __RENDER_TINY_IMAGE_H
 
 #include "tiny_pixel.h"
 

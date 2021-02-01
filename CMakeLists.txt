@@ -22,8 +22,12 @@ link_directories(
 )
 
 # 添加源码
-file(GLOB TINY_SOURCES "*.h" "*.cpp")
-add_executable(tiny ${TINY_SOURCES})
+add_executable(
+    tiny
+    src/main.cpp
+    src/render/tiny_pixel.cpp
+    src/render/tiny_image.cpp    
+)
 
 # 链接
 target_link_libraries(
