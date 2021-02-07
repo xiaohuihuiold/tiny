@@ -25,8 +25,8 @@ link_directories(
 add_executable(
     tiny
     src/main.cpp
-    src/render/tiny_pixel.cpp
-    src/render/tiny_image.cpp    
+    src/render/TinyPixel.cpp
+    src/render/TinyImage.cpp    
 )
 
 # 链接

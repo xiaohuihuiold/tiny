@@ -1,8 +1,7 @@
 #include <iostream>
 #include <GLFW/glfw3.h>
-#include <glm/glm.hpp>
 
-#include "render/tiny_image.h"
+#include "render/TinyImage.h"
 
 const int WIDTH = 800;
 const int HEIGHT = 480;
@@ -14,13 +13,10 @@ int main(int argc, char **argv)
     glfwMakeContextCurrent(window);
     glViewport(0, 0, WIDTH, HEIGHT);
 
-    TinyImage image;
-    image.pixels = new TinyPixel[WIDTH * HEIGHT];
+    tiny::render::TinyImage image;
+    image.pixels = new tiny::render::TinyPixel[WIDTH * HEIGHT];
 
-    for (int i=0;i<800;i++)
-    {
-        image.pixels[77 * WIDTH+i].color = 0xff0000ff;
-    }
+    image.pixels[WIDTH*55+400].setColor(0.0f,1.0f,0.0f,0.0f);
 
     while (!glfwWindowShouldClose(window))
     {
@@ -31,7 +27,7 @@ int main(int argc, char **argv)
         glLoadIdentity();
         glTranslatef(-1.0f, -1.0f, 0.0f);
 
-        glDrawPixels(WIDTH, HEIGHT, GL_RGBA, GL_UNSIGNED_BYTE, image.pixels);
+        glDrawPixels(WIDTH, HEIGHT, GL_RGBA, GL_FLOAT, image.pixels);
 
         glfwSwapBuffers(window);
     }
